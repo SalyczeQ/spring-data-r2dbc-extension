@@ -22,7 +22,7 @@ The goal this library is to provide basic ORM features not covered by Spring Dat
  - Delete with cascade
  - Composite Id
  - Sequence
- - Insert multiple rows in a single INSERT request (except for MySql)
+ - Insert multiple rows in a single INSERT request
  - Schema generation, with indexes, foreign key constraints, sequences
  - Array columns (only with Postgresql)
 
@@ -32,7 +32,6 @@ Features are detailed with examples in the [wiki section](https://github.com/lec
 
  - H2
  - Postgres
- - MySql 
  
 ## Dependencies version
 
@@ -71,13 +70,6 @@ Features are detailed with examples in the [wiki section](https://github.com/lec
 		<td>r2dbc-h2</td>
 		<td>0.9.1.RELEASE</td>
 		<td><a href="https://search.maven.org/artifact/io.r2dbc/r2dbc-h2"><img src="https://img.shields.io/maven-central/v/io.r2dbc/r2dbc-h2.svg"</a></td>
-	</tr>
-	<tr>
-		<td>MySql driver</td>
-		<td>dev.miku</td>
-		<td>r2dbc-mysql</td>
-		<td>0.8.2.RELEASE</td>
-		<td><a href="https://search.maven.org/artifact/dev.miku/r2dbc-mysql"><img src="https://img.shields.io/maven-central/v/dev.miku/r2dbc-mysql.svg"</a></td>
 	</tr>
 	<tr>
 		<td>PostgreSQL driver</td>
@@ -126,22 +118,6 @@ Gradle
 implementation group: 'net.lecousin.reactive-data-relational', name: 'postgres', version: '0.10.2'
 ```
 
-### MySql
-
-Maven
-```xml
-<dependency>
-  <groupId>net.lecousin.reactive-data-relational</groupId>
-  <artifactId>mysql</artifactId>
-  <version>0.10.2</version>
-</dependency>
-```
-
-Gradle
-```groovy
-implementation group: 'net.lecousin.reactive-data-relational', name: 'mysql', version: '0.10.2'
-```
-
 ## Spring Boot configuration
 
 In your Spring Boot application class, you need to:
@@ -167,7 +143,6 @@ public class MyApp {
 
 The `@Import` annotation is used when using a single database connection, and your connection is configured through application properties (`application.properties` or `application.yml`). Depending on your database, you can use one of this configuration class:
  - `net.lecousin.reactive.data.relational.h2.H2Configuration`
- - `net.lecousin.reactive.data.relational.mysql.MySqlConfiguration`
  - `net.lecousin.reactive.data.relational.postgres.PostgresConfiguration`
 
 Finally, configure how to connect to the database using Spring R2DBC normal configuration, here is an example of application.yml file:
@@ -313,7 +288,7 @@ but indicates the link to another class to use with joins or lazy loading. A for
 - `net.lecousin.reactive.data.relational.annotations.JoinTable` can be used for a many to many (n-n) relationship when no additional field is required
 on the join table. The join table will be automatically created with the 2 foreign keys. This allows to join directly between 2 tables with many to many relationship in a
 transparent manner.
-- `org.springframework.data.annotation.CreatedDate` and `org.springframework.data.annotation.LastModifiedDate` can be used to automatically store respectively the creation date and modification date. It can be used with a column of type `Long`, `Instant`, `LocalDate`, `LocalTime` or `LocalDateTime`. `OffsetTime` and `ZonedDateTime` can be used except for MySql that does not support columns with timezone information.
+- `org.springframework.data.annotation.CreatedDate` and `org.springframework.data.annotation.LastModifiedDate` can be used to automatically store respectively the creation date and modification date. It can be used with a column of type `Long`, `Instant`, `LocalDate`, `LocalTime` or `LocalDateTime`. `OffsetTime` and `ZonedDateTime` can be used.
 - `net.lecousin.reactive.data.relational.annotations.ColumnDefinition` allows to specify constraints for schema generation.
 
 Additional methods may be declared in an Entity class to handle lazy loading, documented in the [dedicated section](#lazy-loading).
