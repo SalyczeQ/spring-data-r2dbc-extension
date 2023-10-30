@@ -30,7 +30,7 @@ public class PostgresTestConfiguration extends PostgresConfiguration {
 					}
 			}
 		});
-		EmbeddedPostgres.Builder builder = EmbeddedPostgres.builder().setPGStartupWait(Duration.ofSeconds(30));
+		EmbeddedPostgres.Builder builder = EmbeddedPostgres.builder().setServerConfig("max_connections", "1000").setPGStartupWait(Duration.ofSeconds(30));
 		try {
 			epg = builder.start();
 			Connection conn = epg.getPostgresDatabase().getConnection();
