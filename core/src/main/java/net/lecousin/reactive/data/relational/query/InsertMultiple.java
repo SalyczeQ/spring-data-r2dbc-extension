@@ -31,7 +31,7 @@ import org.springframework.util.StringUtils;
 
 /**
  * Specify an INSERT query, with multiple rows.<br/>
- * As Spring Data R2DBC does not support it, we define a custom request, but it cannot be used with MySql which does not support to return all generated values.<br/>
+ * As Spring Data R2DBC does not support it, we define a custom request<br/>
  * An InsertMultiple can be used in a SqlQuery to be executed.
  * 
  * @author Guillaume Le Cousin
