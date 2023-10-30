@@ -54,7 +54,7 @@ Features are detailed with examples in the [wiki section](https://github.com/lec
 		<td>Appache Commons Lang</td>
 		<td>org.apache.commons</td>
 		<td>commons-lang3</td>
-		<td>3.12.0</td>
+		<td>3.13.0</td>
 		<td><a href="https://search.maven.org/artifact/org.apache.commons/commons-lang3"><img src="https://img.shields.io/maven-central/v/org.apache.commons/commons-lang3.svg"</a></td>
 	</tr>
 	<tr>
