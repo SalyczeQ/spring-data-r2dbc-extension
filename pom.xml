@@ -49,8 +49,9 @@
     <spring-boot.version>3.1.5</spring-boot.version>
     <junit-jupiter.version>5.8.2</junit-jupiter.version>
     <javassist.version>3.29.2-GA</javassist.version>
-    <commons-lang3.version>3.12.0</commons-lang3.version>
-    
+    <commons-lang3.version>3.13.0</commons-lang3.version>
+    <slf4j.version>2.0.9</slf4j.version>
+
     <r2dbc-h2.version>1.0.0.RELEASE</r2dbc-h2.version>
     <r2dbc-postgres.version>1.0.2.RELEASE</r2dbc-postgres.version>
 
@@ -58,16 +59,16 @@
     <reactor.version>3.5.11</reactor.version>
     <r2dbc-spi.version>1.0.0.RELEASE</r2dbc-spi.version>
     
-    <maven-compiler.version>3.10.1</maven-compiler.version>
-    <maven-source.version>3.2.0</maven-source.version>
-    <maven-javadoc.version>3.3.2</maven-javadoc.version>
-    <maven-jar.version>3.2.2</maven-jar.version>
-    <maven-surefire.version>3.0.0-M5</maven-surefire.version>
-    <maven-jacoco.version>0.8.7</maven-jacoco.version>
-    <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+    <maven-compiler.version>3.11.0</maven-compiler.version>
+    <maven-source.version>3.3.0</maven-source.version>
+    <maven-javadoc.version>3.6.0</maven-javadoc.version>
+    <maven-jar.version>3.3.0</maven-jar.version>
+    <maven-surefire.version>3.2.1</maven-surefire.version>
+    <maven-jacoco.version>0.8.11</maven-jacoco.version>
+    <maven-gpg-plugin.version>3.1.0</maven-gpg-plugin.version>
     
     <sonar.projectName>spring-data-r2dbc-extension</sonar.projectName>
-    <sonar.java.source>11</sonar.java.source>
+    <sonar.java.source>17</sonar.java.source>
     <sonar.test.exclusions>**/src/test/**/*</sonar.test.exclusions>
     <sonar.exclusions>test-spring-boot/**/*,test-junit-5/**/*</sonar.exclusions>
     <sonar.coverage.jacoco.xmlReportPaths>jacoco-report-aggregate/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
@@ -117,7 +118,7 @@
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
-        <version>2.0.9</version>
+        <version>${slf4j.version}</version>
       </dependency>
 
     </dependencies>
