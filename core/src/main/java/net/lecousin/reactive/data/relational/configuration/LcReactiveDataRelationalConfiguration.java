@@ -25,6 +25,7 @@ import org.springframework.data.r2dbc.convert.R2dbcCustomConversions;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.data.r2dbc.core.ReactiveDataAccessStrategy;
 import org.springframework.data.r2dbc.mapping.R2dbcMappingContext;
+import org.springframework.data.relational.RelationalManagedTypes;
 import org.springframework.data.relational.core.mapping.NamingStrategy;
 import org.springframework.lang.Nullable;
 import org.springframework.r2dbc.core.DatabaseClient;
@@ -83,10 +84,9 @@ public abstract class LcReactiveDataRelationalConfiguration extends AbstractR2db
 	public R2dbcEntityTemplate r2dbcEntityTemplate(DatabaseClient databaseClient, ReactiveDataAccessStrategy dataAccessStrategy) {
 		return new LcR2dbcEntityTemplate(getLcClient(databaseClient, (LcReactiveDataAccessStrategy) dataAccessStrategy));
 	}
-	
-	@Bean
+
 	@Override
-	public R2dbcMappingContext r2dbcMappingContext(Optional<NamingStrategy> namingStrategy, R2dbcCustomConversions r2dbcCustomConversions) {
+	public R2dbcMappingContext r2dbcMappingContext(Optional<NamingStrategy> namingStrategy, R2dbcCustomConversions r2dbcCustomConversions, RelationalManagedTypes r2dbcManagedTypes) {
 		Assert.notNull(namingStrategy, "NamingStrategy must not be null!");
 
 		LcR2dbcMappingContext mappingContext = new LcR2dbcMappingContext(namingStrategy.orElse(NamingStrategy.INSTANCE));

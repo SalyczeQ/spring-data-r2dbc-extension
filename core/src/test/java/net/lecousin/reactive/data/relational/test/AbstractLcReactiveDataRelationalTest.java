@@ -1,17 +1,13 @@
 package net.lecousin.reactive.data.relational.test;
 
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
-import java.util.function.Function;
-
-import javax.annotation.PostConstruct;
-
+import jakarta.annotation.PostConstruct;
+import net.lecousin.reactive.data.relational.LcReactiveDataRelationalClient;
+import net.lecousin.reactive.data.relational.model.metadata.EntityStaticMetadata;
+import net.lecousin.reactive.data.relational.query.SelectQuery;
+import net.lecousin.reactive.data.relational.repository.LcR2dbcEntityTemplate;
+import net.lecousin.reactive.data.relational.schema.RelationalDatabaseSchema;
+import net.lecousin.reactive.data.relational.test.arraycolumns.EntityWithArrays;
+import net.lecousin.reactive.data.relational.test.simplemodel.DateTypesWithTimeZone;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,13 +21,9 @@ import org.springframework.r2dbc.core.DatabaseClient;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 
-import net.lecousin.reactive.data.relational.LcReactiveDataRelationalClient;
-import net.lecousin.reactive.data.relational.model.metadata.EntityStaticMetadata;
-import net.lecousin.reactive.data.relational.query.SelectQuery;
-import net.lecousin.reactive.data.relational.repository.LcR2dbcEntityTemplate;
-import net.lecousin.reactive.data.relational.schema.RelationalDatabaseSchema;
-import net.lecousin.reactive.data.relational.test.arraycolumns.EntityWithArrays;
-import net.lecousin.reactive.data.relational.test.simplemodel.DateTypesWithTimeZone;
+import java.lang.reflect.Method;
+import java.util.*;
+import java.util.function.Function;
 
 @DataR2dbcTest
 @EnableAutoConfiguration

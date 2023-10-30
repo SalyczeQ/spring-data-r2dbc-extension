@@ -393,7 +393,7 @@ class SaveProcessor extends AbstractInstanceProcessor<SaveProcessor.SaveRequest>
 			.flatMap(updatedRows -> updatedRows != null ? updatedRows.doOnSuccess(nb -> entityUpdated(op, request)).then() : Mono.empty());
 	}
 	
-	private static Mono<Integer> createUpdateRequest(Operation op, SaveRequest request) {
+	private static Mono<Long> createUpdateRequest(Operation op, SaveRequest request) {
 		SqlQuery<Update> query = new SqlQuery<>(op.lcClient);
 		Table table = Table.create(request.entity.getMetadata().getTableName());
 		OutboundRow row = new OutboundRow();
@@ -416,7 +416,7 @@ class SaveProcessor extends AbstractInstanceProcessor<SaveProcessor.SaveRequest>
 		}
 		
 		query.setQuery(Update.builder().table(table).set(assignments).where(criteria).build());
-		Mono<Integer> rowsUpdated = query.execute().fetch().rowsUpdated();
+		Mono<Long> rowsUpdated = query.execute().fetch().rowsUpdated();
 		if (request.entity.getMetadata().hasVersionProperty())
 			rowsUpdated = rowsUpdated.flatMap(updatedRows -> {
 				if (updatedRows.intValue() == 0)

@@ -46,17 +46,17 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   
-    <spring-boot.version>2.6.7</spring-boot.version>
+    <spring-boot.version>3.1.5</spring-boot.version>
     <junit-jupiter.version>5.8.2</junit-jupiter.version>
-    <javassist.version>3.28.0-GA</javassist.version>
+    <javassist.version>3.29.2-GA</javassist.version>
     <commons-lang3.version>3.12.0</commons-lang3.version>
     
-    <r2dbc-h2.version>0.9.1.RELEASE</r2dbc-h2.version>
-    <r2dbc-postgres.version>0.9.1.RELEASE</r2dbc-postgres.version>
+    <r2dbc-h2.version>1.0.0.RELEASE</r2dbc-h2.version>
+    <r2dbc-postgres.version>1.0.2.RELEASE</r2dbc-postgres.version>
 
     <!-- Versions to force for dependencies -->    
-    <reactor.version>3.4.17</reactor.version>
-    <r2dbc-spi.version>0.9.1.RELEASE</r2dbc-spi.version>
+    <reactor.version>3.5.11</reactor.version>
+    <r2dbc-spi.version>1.0.0.RELEASE</r2dbc-spi.version>
     
     <maven-compiler.version>3.10.1</maven-compiler.version>
     <maven-source.version>3.2.0</maven-source.version>
@@ -66,7 +66,7 @@
     <maven-jacoco.version>0.8.7</maven-jacoco.version>
     <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
     
-    <sonar.projectName>lc-spring-data-r2dbc</sonar.projectName>
+    <sonar.projectName>spring-data-r2dbc-extension</sonar.projectName>
     <sonar.java.source>11</sonar.java.source>
     <sonar.test.exclusions>**/src/test/**/*</sonar.test.exclusions>
     <sonar.exclusions>test-spring-boot/**/*,test-junit-5/**/*</sonar.exclusions>

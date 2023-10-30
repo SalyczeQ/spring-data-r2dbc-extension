@@ -1,7 +1,7 @@
 # lc-spring-data-r2dbc
 
 <a href="https://search.maven.org/artifact/net.lecousin.reactive-data-relational/core"><img src="https://img.shields.io/maven-central/v/net.lecousin.reactive-data-relational/core.svg"></a> &nbsp;
-<a href="https://www.javadoc.io/doc/net.lecousin.reactive-data-relational/core/0.10.2"><img src="https://img.shields.io/badge/javadoc-0.10.2-brightgreen.svg"></a> &nbsp;
+<a href="https://www.javadoc.io/doc/net.lecousin.reactive-data-relational/core/0.11.0"><img src="https://img.shields.io/badge/javadoc-0.11.0-brightgreen.svg"></a> &nbsp;
 <a href="https://github.com/lecousin/lc-spring-data-r2dbc/actions/workflows/maven.yml?query=branch%3Amaster"><img src="https://github.com/lecousin/lc-spring-data-r2dbc/actions/workflows/maven.yml/badge.svg?branch=master"></a>
 <br/>
 <a href="https://codecov.io/gh/lecousin/lc-spring-data-r2dbc/branch/master"><img src="https://codecov.io/gh/lecousin/lc-spring-data-r2dbc/branch/master/graph/badge.svg"></a> &nbsp;
@@ -47,7 +47,7 @@ Features are detailed with examples in the [wiki section](https://github.com/lec
 		<td>Spring Boot</td>
 		<td>org.springframework.boot</td>
 		<td>spring-boot-starter-data-r2dbc</td>
-		<td>2.6.7</td>
+		<td>3.1.5</td>
 		<td><a href="https://search.maven.org/artifact/org.springframework.boot/spring-boot-starter-data-r2dbc"><img src="https://img.shields.io/maven-central/v/org.springframework.boot/spring-boot-starter-data-r2dbc.svg"</a></td>
 	</tr>
 	<tr>
@@ -61,21 +61,21 @@ Features are detailed with examples in the [wiki section](https://github.com/lec
 		<td>Javassist</td>
 		<td>org.javassist</td>
 		<td>javassist</td>
-		<td>3.28.0-GA</td>
+		<td>3.29.2-GA</td>
 		<td><a href="https://search.maven.org/artifact/org.javassist/javassist"><img src="https://img.shields.io/maven-central/v/org.javassist/javassist.svg"</a></td>
 	</tr>
 	<tr>
 		<td>H2 driver</td>
 		<td>io.r2dbc</td>
 		<td>r2dbc-h2</td>
-		<td>0.9.1.RELEASE</td>
+		<td>1.0.0.RELEASE</td>
 		<td><a href="https://search.maven.org/artifact/io.r2dbc/r2dbc-h2"><img src="https://img.shields.io/maven-central/v/io.r2dbc/r2dbc-h2.svg"</a></td>
 	</tr>
 	<tr>
 		<td>PostgreSQL driver</td>
 		<td>org.postgresql</td>
 		<td>r2dbc-postgresql</td>
-		<td>0.9.1.RELEASE</td>
+		<td>1.0.2.RELEASE</td>
 		<td><a href="https://search.maven.org/artifact/org.postgresql/r2dbc-postgresql"><img src="https://img.shields.io/maven-central/v/org.postgresql/r2dbc-postgresql.svg"</a></td>
 	</tr>
 </table>
@@ -93,13 +93,13 @@ Maven
 <dependency>
   <groupId>net.lecousin.reactive-data-relational</groupId>
   <artifactId>h2</artifactId>
-  <version>0.10.2</version>
+  <version>0.11.0</version>
 </dependency>
 ```
 
 Gradle
 ```groovy
-implementation group: 'net.lecousin.reactive-data-relational', name: 'h2', version: '0.10.2'
+implementation group: 'net.lecousin.reactive-data-relational', name: 'h2', version: '0.11.0'
 ```
 
 ### Postgres
@@ -109,14 +109,15 @@ Maven
 <dependency>
   <groupId>net.lecousin.reactive-data-relational</groupId>
   <artifactId>postgres</artifactId>
-  <version>0.10.2</version>
+  <version>0.11.0</version>
 </dependency>
 ```
 
 Gradle
 ```groovy
-implementation group: 'net.lecousin.reactive-data-relational', name: 'postgres', version: '0.10.2'
+implementation group: 'net.lecousin.reactive-data-relational', name: 'postgres', version: '0.11.0'
 ```
+
 
 ## Spring Boot configuration
 
@@ -256,7 +257,7 @@ In order to make sure the initializer is launched before any test class is loade
 <dependency>
   <groupId>net.lecousin.reactive-data-relational</groupId>
   <artifactId>test-junit-5</artifactId>
-  <version>0.10.2</version>
+  <version>0.11.0</version>
   <scope>test</scope>
 </dependency>
 ```
