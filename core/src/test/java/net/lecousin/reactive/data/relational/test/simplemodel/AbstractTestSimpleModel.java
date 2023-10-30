@@ -517,7 +517,7 @@ public abstract class AbstractTestSimpleModel extends AbstractLcReactiveDataRela
 	}
 	
 	@Test
-	public void testDatesWithTimzone() {
+	public void testDatesWithTimezone() {
 		Assumptions.assumeTrue(lcClient.getSchemaDialect().isTimeZoneSupported());
 		java.time.Instant instant = java.time.Instant.now();
 		instant = instant.truncatedTo(ChronoUnit.MILLIS);

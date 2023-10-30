@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.lecousin.reactive-data-relational</groupId>
   <artifactId>parent</artifactId>
-  <version>0.10.2</version>
+  <version>0.11.0</version>
   <packaging>pom</packaging>
   
   <name>net.lecousin.reactive-data-relational aka lc-spring-data-r2dbc</name>
@@ -286,7 +286,6 @@
   <modules>
     <module>core</module>
     <module>h2</module>
-    <module>mysql</module>
     <module>postgres</module>
     <module>test-junit-5</module>
     <module>test-spring-boot</module>
